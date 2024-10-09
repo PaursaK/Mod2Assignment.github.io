@@ -1,0 +1,107 @@
+h1 {
+    display: flex;
+    justify-content: center;  /* Horizontally centers the header */
+    margin: 0;                /* Removes any default margin */
+}
+
+body {
+    font-size: 16px; 
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;  /* Evenly spaces items, with equal space between */
+    flex-wrap: wrap;                 
+    margin: 0 10px;                  
+}
+
+/* Base styles for menu items */
+.chicken, .beef, .sushi {
+    background-color: gray;
+    border: 1px solid black;
+    padding: 15px;
+    margin: 10px 0;                  
+    box-sizing: border-box;
+    position: relative;
+    flex: 1 1 33%;                   /* Flex items grow/shrink and take 33% width */
+    max-width: 33%;            
+}
+
+
+/* Title styles */
+.food-title {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Title styles */
+.food-title {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 1px;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    width: 100px; /* Fixed width */
+    height: 20px; /* Fixed height */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+
+/* Distinct colors for each food title */
+.chicken .food-title {
+    background-color: pink;
+    
+}
+
+.beef .food-title {
+    background-color: red;
+}
+
+.sushi .food-title {
+    background-color: yellow;
+}
+
+/* Media query for large screens (desktop) */
+@media (min-width: 992px) {
+    .row {
+        justify-content: space-between;  /* Evenly spaces the items */
+    }
+
+    .chicken, .beef, .sushi {
+        flex: 1 1 33%;
+        max-width: 33%;
+    }
+}
+
+/* Media query for medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .chicken, .beef {
+        flex: 1 1 48.9%;
+        max-width: 48.9%;
+        
+    }
+
+    .sushi {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* Media query for small screens (mobile) */
+@media (max-width: 767px) {
+    .chicken, .beef, .sushi {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
